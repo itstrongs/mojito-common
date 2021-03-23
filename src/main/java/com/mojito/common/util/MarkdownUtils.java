@@ -108,7 +108,7 @@ public class MarkdownUtils {
                     firstChild.setLiteral("<section>" + firstChild.getLiteral());
                     lastChild.setLiteral(lastChild.getLiteral() + "</section>");
                 } catch (Exception e) {
-                    log.error("增加section异常", e);
+                    log.error("增加section异常");
                 }
             }
             try {
@@ -120,7 +120,7 @@ public class MarkdownUtils {
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("解析Heading异常");
             }
             if ("pre".equals(tagName)) {
                 attributes.put("class", "custom");
